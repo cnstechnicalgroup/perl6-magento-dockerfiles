@@ -2,5 +2,5 @@
 
 source ./env;
 
-docker exec -i -t dockerperl6magento2_web_1 /bin/bash -c "cd /var/www/html; /usr/local/bin/install-magento; /usr/local/bin/install-sampledata";
-docker exec -i -t dockerperl6magento2_db_1 /bin/bash -c "CUSTOMERSQL=CUSTOMERSQL; echo \"$CUSTOMERSQL\" > /tmp/customer.sql; mysql -u root -p${MYSQL_ROOT_PASSWORD} magento  < /tmp/customer.sql" -e CUSTOMERSQL=$(cat sql/customer-entity.sql);
+docker exec -i -t dockermagento2_web_1 /bin/bash -c "cd /var/www/html; /usr/local/bin/install-magento; /usr/local/bin/install-sampledata";
+docker exec -i -t dockermagento2_db_1 /bin/bash -c "CUSTOMERSQL=CUSTOMERSQL; echo \"$CUSTOMERSQL\" > /tmp/customer.sql; mysql -u root -p${MYSQL_ROOT_PASSWORD} magento  < /tmp/customer.sql" -e CUSTOMERSQL=$(cat sql/customer-entity.sql);
