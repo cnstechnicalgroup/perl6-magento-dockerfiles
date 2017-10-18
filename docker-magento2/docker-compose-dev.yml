@@ -1,0 +1,16 @@
+version: '2'
+services:
+  db:
+    image: mysql:latest
+    env_file:
+      - env
+    ports:
+      - "33061:3306"
+  web:
+    build: .
+    env_file:
+      - env
+    ports:
+      - "80:80"
+    links:
+      - db:mysql
