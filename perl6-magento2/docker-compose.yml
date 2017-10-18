@@ -7,7 +7,7 @@ services:
     ports:
       - "33061:3306"
   web:
-    build: cnstechnicalgroup/docker-magento2
+    image: cnstechnicalgroup/docker-magento2
     env_file:
       - env
     ports:
