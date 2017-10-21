@@ -14,3 +14,9 @@ services:
       - "80:80"
     links:
       - db:mysql
+  rakudo:
+    image: rakudo-star
+    links:
+      - web
+    stdin_open: true
+    tty: true
