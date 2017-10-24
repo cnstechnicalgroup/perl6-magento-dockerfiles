@@ -2,12 +2,6 @@
 
 source ./env;
 
-# Wait until MySQL service is up
-while [[ "$variable" != *"succeeded"* ]];do
-    variable=$(docker exec -i -t perl6magento2_web_1 /bin/bash -c "nc -zv db 3306")
-    sleep 0.1 
-done 
-
 # Wait until composer initialized
 while [[ "$variable" != *"/var/www/html/var/composer_home: directory"* ]];do
     variable=$(docker exec -i -t perl6magento2_web_1 /bin/bash -c "file /var/www/html/var/composer_home")
